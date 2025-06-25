@@ -27,13 +27,13 @@ const Hero = () => {
         inView ? " in-view" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
-        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 items-center">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-20">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-[1.1fr_1.3fr] gap-12 items-center">
           {/* Left Column - Content */}
           <div
-            className={`space-y-8 lg:-ml-12 ${
+            className={`space-y-8 ${
               animate ? "hero-slide-in-left" : "opacity-0"
-            }`}
+            } lg:pl-8 xl:pl-0 xl:-ml-6`}
           >
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
@@ -95,7 +95,7 @@ const Hero = () => {
           <img
             src="/images/hero.jpg"
             alt=""
-            className={`rounded-2xl lg:-mr-12 ${
+            className={`rounded-2xl w-full lg:max-w-lg xl:max-w-full lg:ml-auto lg:mr-0 xl:-mr-6 h-auto ${
               animate ? "hero-slide-in-right" : "opacity-0"
             }`}
           />

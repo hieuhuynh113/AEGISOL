@@ -11,15 +11,15 @@ const Footer = () => {
             <img
               src="/images/logo.png"
               alt="AEGISOL Logo"
-              className="h-8 w-24 object-cover"
+              className="h-14 w-auto object-contain mb-4"
             />
 
-            <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+            <p className="text-gray-400 leading-relaxed mb-6 ml-[2%] max-w-md">
               Revolutionizing software testing through AI-integrated solutions.
               We help businesses automate their testing processes and optimize
               vendor supply chains.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 ml-[2%]">
               <a
                 href="#"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"

@@ -27,11 +27,13 @@ const Header = () => {
                 alt="AEGISOL Logo"
               />
             </div> */}
-            <img
-              className="h-16 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" // Màu trắng với 70% opacity
-              src="/images/logo.png"
-              alt="AEGISOL Logo"
-            />
+            <a href="#home">
+              <img
+                className="h-16 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" // Màu trắng với 70% opacity
+                src="/images/logo.png"
+                alt="AEGISOL Logo"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
