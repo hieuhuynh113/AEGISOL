@@ -2,10 +2,7 @@ import { ArrowRight, Zap, Target, Shield } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="relative bg-gradient-to-br from-blue-50 via-white to-teal-50 pt-16 pb-20 lg:pt-24 lg:pb-28"
-    >
+    <section id="home" className="relative pt-16 pb-20 lg:pt-24 lg:pb-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
