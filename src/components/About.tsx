@@ -108,8 +108,8 @@ const About = () => {
               <div className="w-28 h-28 bg-gradient-to-r from-green-400 to-teal-500 rounded-full mx-auto mb-6 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                 <img
                   className="rounded-full w-28 h-28 object-cover border-4 border-white/50 shadow-md"
-                  src="/images/about2.png"
-                  alt=""
+                  src=""
+                  alt="Hình 2"
                 />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-1">
