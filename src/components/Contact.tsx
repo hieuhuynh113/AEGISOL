@@ -1,5 +1,6 @@
 import "../fade-animations.css";
-import React, { useState } from "react";
+import "../hero-animations.css";
+import React, { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 
@@ -12,6 +13,11 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [ref, inView] = useInView();
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    if (inView) setAnimate(true);
+  }, [inView]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,14 +42,16 @@ const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className={`py-20 bg-gray-50 animate-fade-up${inView ? " in-view" : ""}`}
+      className={`py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-teal-700 animate-fade-up${
+        inView ? " in-view" : ""
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-white mb-4">
             Ready to Transform Your Testing?
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto">
             Get in touch with our team to discuss how AEGISOL can revolutionize
             your development workflow. Let's build the future of intelligent
             testing together.
@@ -52,9 +60,13 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Column - Contact Information */}
-          <div className="space-y-8">
+          <div
+            className={`space-y-8 contact-zoom-in ${
+              animate ? "" : "opacity-0"
+            }`}
+          >
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-2xl font-semibold text-white mb-6">
                 Get in Touch
               </h3>
               <div className="space-y-6">
@@ -63,9 +75,9 @@ const Contact = () => {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Email Us</h4>
-                    <p className="text-gray-600">hello@aegisol.com</p>
-                    <p className="text-gray-600">support@aegisol.com</p>
+                    <h4 className="font-semibold text-white">Email Us</h4>
+                    <p className="text-white/80">hello@aegisol.com</p>
+                    <p className="text-white/80">support@aegisol.com</p>
                   </div>
                 </div>
 
@@ -74,8 +86,8 @@ const Contact = () => {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Call Us</h4>
-                    <p className="text-gray-600">+84 901 904 798</p>
+                    <h4 className="font-semibold text-white">Call Us</h4>
+                    <p className="text-white/80">+84 901 904 798</p>
                   </div>
                 </div>
 
@@ -84,8 +96,8 @@ const Contact = () => {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Visit Us</h4>
-                    <p className="text-gray-600">
+                    <h4 className="font-semibold text-white">Visit Us</h4>
+                    <p className="text-white/80">
                       Dong Dinh Village, Dien Toan Commune, Dien Khanh District,
                       Khanh Hoa Province, Vietnam
                     </p>
@@ -96,7 +108,11 @@ const Contact = () => {
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="bg-white rounded-2xl shadow-lg p-8">
+          <div
+            className={`bg-white rounded-2xl shadow-lg p-8 contact-zoom-in ${
+              animate ? "" : "opacity-0"
+            }`}
+          >
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />

@@ -1,4 +1,5 @@
 import "../fade-animations.css";
+import "../hero-animations.css";
 import { Truck, Bot, Database, Zap, Settings, BarChart3 } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 
@@ -97,7 +98,14 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+                className={`bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 service-fade-up service-delay-${index} ${
+                  inView ? "" : "opacity-0"
+                }`}
+                style={
+                  inView
+                    ? { animationPlayState: "running" }
+                    : { animationPlayState: "paused" }
+                }
               >
                 <div className="mb-6">
                   <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg flex items-center justify-center mb-4">
