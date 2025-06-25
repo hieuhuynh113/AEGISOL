@@ -10,9 +10,23 @@ const stats = [
   { icon: Award, label: "Industry Awards", value: 15, suffix: "+" },
 ];
 
-function StatCard({ icon: IconComponent, value, label, suffix, inView }: any) {
+interface StatCardProps {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  value: number;
+  label: string;
+  suffix: string;
+  inView: boolean;
+}
+
+function StatCard({
+  icon: IconComponent,
+  value,
+  label,
+  suffix,
+  inView,
+}: StatCardProps) {
   const count = useCountUp(value, inView, 1200);
-  let display =
+  const display =
     value >= 1000000
       ? `${Math.floor(count / 1000000)}M${suffix}`
       : value >= 1000
