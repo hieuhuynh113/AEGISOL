@@ -1,0 +1,101 @@
+/* Hero section slide-in animations */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-slide-in-left {
+  animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.hero-slide-in-right {
+  animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Fade-up animation for services */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Staggered delay classes */
+.service-delay-0 {
+  animation-delay: 0.05s;
+}
+.service-delay-1 {
+  animation-delay: 0.15s;
+}
+.service-delay-2 {
+  animation-delay: 0.25s;
+}
+.service-delay-3 {
+  animation-delay: 0.35s;
+}
+.service-delay-4 {
+  animation-delay: 0.45s;
+}
+.service-delay-5 {
+  animation-delay: 0.55s;
+}
+
+/* About section: left slide-in, right slide-in */
+.about-slide-in-left {
+  animation: slideInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.about-slide-in-right {
+  animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Products section: fade up for both columns */
+.products-fade-up {
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Contact section: zoom in */
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.contact-zoom-in {
+  opacity: 0;
+  animation: zoomIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Footer: fade in from bottom */
+.footer-fade-in {
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
