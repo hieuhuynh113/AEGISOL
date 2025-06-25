@@ -1,8 +1,25 @@
-import { ArrowRight, Zap, Target, Shield } from "lucide-react";
+import "../fade-animations.css";
+import { ArrowDown, Zap } from "lucide-react";
+import { useInView } from "../hooks/useInView";
 
 const Hero = () => {
+  const [ref, inView] = useInView();
+
+  const handleScrollToNext = () => {
+    const nextSection = document.getElementById("services");
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section id="home" className="relative pt-16 pb-20 lg:pt-24 lg:pb-28">
+    <section
+      id="home"
+      ref={ref}
+      className={`relative pt-16 pb-20 lg:pt-24 lg:pb-28 animate-fade-up${
+        inView ? " in-view" : ""
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
@@ -28,12 +45,15 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-700 text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition-all duration-200 font-semibold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                <span>Get Started Today</span>
-                <ArrowRight className="h-5 w-5" />
+              <button
+                className="bg-blue-700 text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition-all duration-200 font-semibold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                onClick={handleScrollToNext}
+              >
+                <span>More</span>
+                <ArrowDown className="h-5 w-5" />
               </button>
               <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-blue-700 hover:text-blue-700 transition-all duration-200 font-semibold">
-                Watch Demo
+                Contact Us
               </button>
             </div>
 
@@ -61,55 +81,7 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Visual */}
-          <div className="relative">
-            <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl p-8 shadow-2xl">
-              <div className="bg-white rounded-lg p-6 space-y-4">
-                <div className="flex items-center space-x-3 mb-4">
-                  <Target className="h-6 w-6 text-blue-600" />
-                  <span className="font-semibold text-gray-900">
-                    AI Test Generator
-                  </span>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-lg">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-sm text-gray-700">
-                      User Authentication Tests ✓
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
-                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm text-gray-700">
-                      API Integration Tests... ⚡
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-3 h-3 bg-gray-300 rounded-full"></div>
-                    <span className="text-sm text-gray-500">
-                      Database Tests (Queued)
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <Shield className="h-5 w-5 text-blue-600" />
-                    <span className="font-medium text-gray-900">
-                      AI Insights
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    Generated 847 test cases with 99.2% accuracy
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating elements */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-orange-500 rounded-full opacity-20 animate-pulse"></div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-teal-500 rounded-full opacity-10 animate-pulse"></div>
-          </div>
+          <img src="hero.jpg" alt="" />
         </div>
       </div>
     </section>

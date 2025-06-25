@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import "../fade-animations.css";
+import React, { useState } from "react";
+import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { useInView } from "../hooks/useInView";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [ref, inView] = useInView();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,27 +19,34 @@ const Contact = () => {
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: "", email: "", company: "", message: "" });
     }, 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section
+      id="contact"
+      ref={ref}
+      className={`py-20 bg-gray-50 animate-fade-up${inView ? " in-view" : ""}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             Ready to Transform Your Testing?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Get in touch with our team to discuss how AEGISOL can revolutionize your development workflow. 
-            Let's build the future of intelligent testing together.
+            Get in touch with our team to discuss how AEGISOL can revolutionize
+            your development workflow. Let's build the future of intelligent
+            testing together.
           </p>
         </div>
 
@@ -44,7 +54,9 @@ const Contact = () => {
           {/* Left Column - Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+                Get in Touch
+              </h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -63,8 +75,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Call Us</h4>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-gray-600">Mon-Fri 9AM-6PM EST</p>
+                    <p className="text-gray-600">+84 901 904 798</p>
                   </div>
                 </div>
 
@@ -74,21 +85,13 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900">Visit Us</h4>
-                    <p className="text-gray-600">123 Innovation Drive</p>
-                    <p className="text-gray-600">Tech Valley, CA 94043</p>
+                    <p className="text-gray-600">
+                      Dong Dinh Village, Dien Toan Commune, Dien Khanh District,
+                      Khanh Hoa Province, Vietnam
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl p-8 text-white">
-              <h4 className="text-xl font-semibold mb-4">Schedule a Demo</h4>
-              <p className="text-blue-100 mb-6">
-                See AEGISOL in action with a personalized demonstration tailored to your specific use cases.
-              </p>
-              <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
-                Book Demo Call
-              </button>
             </div>
           </div>
 
@@ -97,13 +100,21 @@ const Contact = () => {
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Message Sent!</h3>
-                <p className="text-gray-600">Thank you for your interest. We'll get back to you within 24 hours.</p>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                  Message Sent!
+                </h3>
+                <p className="text-gray-600">
+                  Thank you for your interest. We'll get back to you within 24
+                  hours.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Full Name
                   </label>
                   <input
@@ -119,7 +130,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Email Address
                   </label>
                   <input
@@ -135,7 +149,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Company Name
                   </label>
                   <input
@@ -150,7 +167,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Message
                   </label>
                   <textarea

@@ -1,4 +1,6 @@
+import "../fade-animations.css";
 import { Truck, Bot, Database, Zap, Settings, BarChart3 } from "lucide-react";
+import { useInView } from "../hooks/useInView";
 
 const services = [
   {
@@ -70,8 +72,13 @@ const services = [
 ];
 
 const Services = () => {
+  const [ref, inView] = useInView();
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section
+      id="services"
+      ref={ref}
+      className={`py-20 bg-gray-50 animate-fade-up${inView ? " in-view" : ""}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">

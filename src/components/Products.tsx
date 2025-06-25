@@ -1,16 +1,32 @@
-import { Brain, Plus, Edit3, Trash2, Play, CheckCircle, AlertCircle } from 'lucide-react';
+import "../fade-animations.css";
+import {
+  Brain,
+  Plus,
+  Edit3,
+  Trash2,
+  Play,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
+import { useInView } from "../hooks/useInView";
 
 const Products = () => {
+  const [ref, inView] = useInView();
   return (
-    <section id="products" className="py-20 bg-white">
+    <section
+      id="products"
+      ref={ref}
+      className={`py-20 bg-white animate-fade-up${inView ? " in-view" : ""}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
             AI-Powered Test Case Management
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our flagship product uses advanced AI to automatically generate, manage, and execute test cases, 
-            revolutionizing your software testing workflow.
+            Our flagship product uses advanced AI to automatically generate,
+            manage, and execute test cases, revolutionizing your software
+            testing workflow.
           </p>
         </div>
 
@@ -23,8 +39,13 @@ const Products = () => {
                   <Brain className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">AI Test Generation</h3>
-                  <p className="text-gray-600">Automatically create comprehensive test cases based on your application requirements and user stories.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    AI Test Generation
+                  </h3>
+                  <p className="text-gray-600">
+                    Automatically create comprehensive test cases based on your
+                    application requirements and user stories.
+                  </p>
                 </div>
               </div>
 
@@ -33,8 +54,13 @@ const Products = () => {
                   <Plus className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Easy Test Creation</h3>
-                  <p className="text-gray-600">Add new test cases manually or let AI suggest relevant scenarios based on existing patterns.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Easy Test Creation
+                  </h3>
+                  <p className="text-gray-600">
+                    Add new test cases manually or let AI suggest relevant
+                    scenarios based on existing patterns.
+                  </p>
                 </div>
               </div>
 
@@ -43,8 +69,13 @@ const Products = () => {
                   <Edit3 className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Smart Editing</h3>
-                  <p className="text-gray-600">Edit test cases with AI-powered suggestions and automatic validation of test logic.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Smart Editing
+                  </h3>
+                  <p className="text-gray-600">
+                    Edit test cases with AI-powered suggestions and automatic
+                    validation of test logic.
+                  </p>
                 </div>
               </div>
 
@@ -53,8 +84,13 @@ const Products = () => {
                   <Trash2 className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Intelligent Cleanup</h3>
-                  <p className="text-gray-600">Remove redundant or obsolete test cases with AI recommendations for optimization.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    Intelligent Cleanup
+                  </h3>
+                  <p className="text-gray-600">
+                    Remove redundant or obsolete test cases with AI
+                    recommendations for optimization.
+                  </p>
                 </div>
               </div>
             </div>
@@ -88,7 +124,9 @@ const Products = () => {
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
-                <span className="text-gray-300 text-sm font-mono">AEGISOL Test Manager</span>
+                <span className="text-gray-300 text-sm font-mono">
+                  AEGISOL Test Manager
+                </span>
               </div>
 
               {/* Demo Content */}
@@ -96,14 +134,18 @@ const Products = () => {
                 <div className="text-green-400 font-mono text-sm">
                   $ aegisol generate-tests --feature="user-login"
                 </div>
-                
+
                 <div className="space-y-3">
                   <div className="bg-gray-800 rounded-lg p-4">
                     <div className="flex items-center space-x-3 mb-2">
                       <Play className="h-4 w-4 text-blue-400" />
-                      <span className="text-blue-400 font-mono text-sm">Test Case #001</span>
+                      <span className="text-blue-400 font-mono text-sm">
+                        Test Case #001
+                      </span>
                     </div>
-                    <p className="text-gray-300 text-sm">Valid email and password login</p>
+                    <p className="text-gray-300 text-sm">
+                      Valid email and password login
+                    </p>
                     <div className="flex items-center space-x-2 mt-2">
                       <CheckCircle className="h-4 w-4 text-green-400" />
                       <span className="text-green-400 text-xs">PASSED</span>
@@ -113,21 +155,31 @@ const Products = () => {
                   <div className="bg-gray-800 rounded-lg p-4">
                     <div className="flex items-center space-x-3 mb-2">
                       <Play className="h-4 w-4 text-blue-400" />
-                      <span className="text-blue-400 font-mono text-sm">Test Case #002</span>
+                      <span className="text-blue-400 font-mono text-sm">
+                        Test Case #002
+                      </span>
                     </div>
-                    <p className="text-gray-300 text-sm">Invalid email format validation</p>
+                    <p className="text-gray-300 text-sm">
+                      Invalid email format validation
+                    </p>
                     <div className="flex items-center space-x-2 mt-2">
                       <AlertCircle className="h-4 w-4 text-yellow-400" />
-                      <span className="text-yellow-400 text-xs">RUNNING...</span>
+                      <span className="text-yellow-400 text-xs">
+                        RUNNING...
+                      </span>
                     </div>
                   </div>
 
                   <div className="bg-gray-800 rounded-lg p-4">
                     <div className="flex items-center space-x-3 mb-2">
                       <Brain className="h-4 w-4 text-purple-400" />
-                      <span className="text-purple-400 font-mono text-sm">AI Suggestion</span>
+                      <span className="text-purple-400 font-mono text-sm">
+                        AI Suggestion
+                      </span>
                     </div>
-                    <p className="text-gray-300 text-sm">Consider testing password reset flow</p>
+                    <p className="text-gray-300 text-sm">
+                      Consider testing password reset flow
+                    </p>
                     <button className="mt-2 bg-purple-600 text-white px-3 py-1 rounded text-xs hover:bg-purple-700 transition-colors">
                       Add Test
                     </button>
