@@ -42,7 +42,7 @@ const Contact = () => {
     <section
       id="contact"
       ref={ref}
-      className={`py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-teal-700 animate-fade-up${
+      className={`py-20 bg-[#042940] animate-fade-up${
         inView ? " in-view" : ""
       }`}
     >

@@ -23,15 +23,15 @@ const Hero = () => {
     <section
       id="home"
       ref={ref}
-      className={`py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-teal-700 animate-fade-up${
+      className={`py-20 bg-[#042940] animate-fade-up${
         inView ? " in-view" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 items-center">
           {/* Left Column - Content */}
           <div
-            className={`space-y-8 ${
+            className={`space-y-8 lg:-ml-12 ${
               animate ? "hero-slide-in-left" : "opacity-0"
             }`}
           >
@@ -44,10 +44,14 @@ const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-white/90 leading-relaxed max-w-2xl">
-                AEGISOL delivers cutting-edge AI-integrated vendor supply
-                systems that automatically generate, manage, and optimize test
-                cases. Transform your development workflow with intelligent
-                automation.
+                AEGISOL delivers next-generation AI solutions for vendors,
+                empowering QA teams with intelligent platforms that
+                auto-generate manual test cases and seamlessly convert them into
+                automation scripts. Our AI-powered testing product accelerates
+                quality assurance, reduces human effort, and drives smarter
+                software delivery. From vendor support to end-to-end testing
+                transformation, AEGISOL is your partner in intelligent
+                innovation.
               </p>
             </div>
 
@@ -91,7 +95,7 @@ const Hero = () => {
           <img
             src="/images/hero.jpg"
             alt=""
-            className={`rounded-2xl ${
+            className={`rounded-2xl lg:-mr-12 ${
               animate ? "hero-slide-in-right" : "opacity-0"
             }`}
           />

@@ -1,82 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 60) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 shadow-lg backdrop-blur-md"
-          : "bg-gradient-to-r from-gray-900 via-gray-800 to-teal-700 backdrop-blur-md"
-      }`}
+      className={`sticky top-0 z-50 transition-all duration-300 bg-[#042940]`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="w-full px-0 sm:px-2 lg:px-4">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img
+          <div className="flex items-center space-x-2 pl-2">
+            {/* <img
+              className="h-16 w-auto drop-shadow-[0_1px_2px_rgba(255,255,255,0.25)]"
               src="/images/logo.png"
               alt="AEGISOL Logo"
-              className="h-32 w-32 object-contain"
+            /> */}
+            {/* Wrapper div để tạo huy hiệu */}
+            {/* <div className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 p-1 shadow-lg">
+              <img
+                className="h-auto w-12" // Kích thước logo nhỏ hơn để nằm gọn trong huy hiệu
+                src="/images/logo.png"
+                alt="AEGISOL Logo"
+              />
+            </div> */}
+            <img
+              className="h-16 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" // Màu trắng với 70% opacity
+              src="/images/logo.png"
+              alt="AEGISOL Logo"
             />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 pr-2">
             <a
               href="#home"
-              className={`transition-colors duration-200 font-medium ${
-                scrolled
-                  ? "text-blue-800 hover:text-blue-700"
-                  : "text-white hover:text-yellow-300"
-              }`}
+              className="transition-colors duration-200 font-medium text-white hover:text-yellow-300"
             >
               Home
             </a>
             <a
               href="#services"
-              className={`transition-colors duration-200 font-medium ${
-                scrolled
-                  ? "text-blue-800 hover:text-blue-700"
-                  : "text-white hover:text-yellow-300"
-              }`}
+              className="transition-colors duration-200 font-medium text-white hover:text-yellow-300"
             >
               Services
             </a>
             <a
               href="#products"
-              className={`transition-colors duration-200 font-medium ${
-                scrolled
-                  ? "text-blue-800 hover:text-blue-700"
-                  : "text-white hover:text-yellow-300"
-              }`}
+              className="transition-colors duration-200 font-medium text-white hover:text-yellow-300"
             >
               Products
             </a>
             <a
               href="#about"
-              className={`transition-colors duration-200 font-medium ${
-                scrolled
-                  ? "text-blue-800 hover:text-blue-700"
-                  : "text-white hover:text-yellow-300"
-              }`}
+              className="transition-colors duration-200 font-medium text-white hover:text-yellow-300"
             >
               About
             </a>
