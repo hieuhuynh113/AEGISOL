@@ -1,5 +1,5 @@
 import "../fade-animations.css";
-import { ArrowDown, Zap } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { useInView } from "../hooks/useInView";
 
 const Hero = () => {
@@ -25,10 +25,6 @@ const Hero = () => {
           {/* Left Column - Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
-                <Zap className="h-4 w-4" />
-                <span>AI-Powered Testing Solutions</span>
-              </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
                 Revolutionize Your
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-teal-600">
