@@ -81,7 +81,7 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Visual */}
-          <img src="/public/images/hero.jpg" alt="" />
+          <img src="/images/hero.jpg" alt="" />
         </div>
       </div>
     </section>
