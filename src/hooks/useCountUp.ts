@@ -19,7 +19,6 @@ export function useCountUp(target: number, inView: boolean, duration = 1200) {
       }
     }
     requestAnimationFrame(animate);
-    // eslint-disable-next-line
   }, [inView, target, duration]);
   return count;
 }

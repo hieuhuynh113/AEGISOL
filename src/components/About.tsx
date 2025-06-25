@@ -1,7 +1,7 @@
 import "../fade-animations.css";
 import "../hero-animations.css";
 import { useInView } from "../hooks/useInView";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const About = () => {
   const [ref, inView] = useInView();

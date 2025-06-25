@@ -2,7 +2,7 @@ import "../fade-animations.css";
 import "../hero-animations.css";
 import { ArrowDown } from "lucide-react";
 import { useInView } from "../hooks/useInView";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const [ref, inView] = useInView();

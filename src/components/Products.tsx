@@ -2,7 +2,7 @@ import "../fade-animations.css";
 import "../hero-animations.css";
 import { Brain, Plus, Edit3, Trash2, CheckCircle } from "lucide-react";
 import { useInView } from "../hooks/useInView";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const carouselImages = [
   "/images/project_carousel1.png",
