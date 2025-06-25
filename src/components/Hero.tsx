@@ -81,7 +81,7 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Visual */}
-          <img src="/images/hero.jpg" alt="" />
+          <img src="/images/hero.jpg" alt="" className="rounded-2xl" />
         </div>
       </div>
     </section>

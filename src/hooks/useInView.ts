@@ -8,17 +8,14 @@ export function useInView(options = { threshold: 0.15 }) {
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    const observer = new window.IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          setHasBeenInView(true);
-        } else {
-          setInView(false);
-        }
-      },
-      options
-    );
+    const observer = new window.IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setInView(true);
+        setHasBeenInView(true);
+      } else {
+        setInView(false);
+      }
+    }, options);
     observer.observe(node);
     return () => observer.unobserve(node);
   }, [options]);
