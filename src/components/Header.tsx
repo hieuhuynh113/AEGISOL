@@ -46,7 +46,7 @@ const Header = () => {
               }}
             >
               <img
-                className="h-20 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                className="h-24 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
                 src="/images/logo.png"
                 alt="AEGISOL Logo"
               />

@@ -97,8 +97,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-white">Visit Us</h4>
                     <p className="text-white/80">
-                      Dong Dinh Village, Dien Toan Commune, Dien Khanh District,
-                      Khanh Hoa Province, Vietnam
+                      Dien Toan Commune, Dien Khanh District, Khanh Hoa
+                      Province, Vietnam
                     </p>
                   </div>
                 </div>
