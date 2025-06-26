@@ -4,4 +4,5 @@
 
 body {
   @apply bg-gradient-to-br from-blue-50 via-white to-teal-50;
+  scroll-behavior: smooth;
 }

@@ -46,19 +46,19 @@ const Contact = () => {
         inView ? " in-view" : ""
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-4xl font-bold text-white">
             Ready to Transform Your Testing?
           </h2>
-          <p className="text-lg text-white/90 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto text-lg text-white/90">
             Get in touch with our team to discuss how AEGISOL can revolutionize
             your development workflow. Let's build the future of intelligent
             testing together.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid gap-16 lg:grid-cols-2">
           {/* Left Column - Contact Information */}
           <div
             className={`space-y-8 contact-zoom-in ${
@@ -66,24 +66,23 @@ const Contact = () => {
             }`}
           >
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">
+              <h3 className="mb-6 text-2xl font-semibold text-white">
                 Get in Touch
               </h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-white" />
+                  <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-blue-600 rounded-lg">
+                    <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">Email Us</h4>
                     <p className="text-white/80">hello@aegisol.com</p>
-                    <p className="text-white/80">support@aegisol.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-white" />
+                  <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-teal-600 rounded-lg">
+                    <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">Call Us</h4>
@@ -92,8 +91,8 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-white" />
+                  <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 bg-orange-600 rounded-lg">
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">Visit Us</h4>
@@ -114,9 +113,9 @@ const Contact = () => {
             }`}
           >
             {isSubmitted ? (
-              <div className="text-center py-12">
-                <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+              <div className="py-12 text-center">
+                <CheckCircle className="w-16 h-16 mx-auto mb-4 text-green-600" />
+                <h3 className="mb-2 text-2xl font-semibold text-gray-900">
                   Message Sent!
                 </h3>
                 <p className="text-gray-600">
@@ -129,7 +128,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Full Name
                   </label>
@@ -140,7 +139,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 transition-colors duration-200 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Your full name"
                   />
                 </div>
@@ -148,7 +147,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Email Address
                   </label>
@@ -159,7 +158,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 transition-colors duration-200 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="your.email@company.com"
                   />
                 </div>
@@ -167,7 +166,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="company"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Company Name
                   </label>
@@ -177,7 +176,7 @@ const Contact = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 transition-colors duration-200 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Your company name"
                   />
                 </div>
@@ -185,7 +184,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Message
                   </label>
@@ -196,7 +195,7 @@ const Contact = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors duration-200 resize-none"
+                    className="w-full px-4 py-3 transition-colors duration-200 border border-gray-300 rounded-lg resize-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     placeholder="Tell us about your testing challenges and how we can help..."
                   ></textarea>
                 </div>
@@ -206,7 +205,7 @@ const Contact = () => {
                   className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-200 font-semibold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
                   <span>Send Message</span>
-                  <Send className="h-5 w-5" />
+                  <Send className="w-5 h-5" />
                 </button>
               </form>
             )}

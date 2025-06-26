@@ -86,7 +86,7 @@ const About = () => {
         </div>
 
         {/* Team Section */}
-        <div className="mt-20 text-center">
+        {/* <div className="mt-20 text-center">
           <h3 className="text-2xl font-bold text-blue-700 mb-8">
             Our Leadership Team
           </h3>
@@ -118,7 +118,7 @@ const About = () => {
               <p className="text-blue-700 text-base mb-2">CTO</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

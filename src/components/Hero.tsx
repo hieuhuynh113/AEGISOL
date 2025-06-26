@@ -19,6 +19,13 @@ const Hero = () => {
     }
   };
 
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -36,14 +43,14 @@ const Hero = () => {
             } lg:pl-8 xl:pl-0 xl:-ml-6`}
           >
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-4xl font-bold leading-tight text-white lg:text-5xl xl:text-6xl">
                 Revolutionize Your
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-teal-200">
                   {" "}
                   Testing Process
                 </span>
               </h1>
-              <p className="text-lg text-white/90 leading-relaxed max-w-2xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/90">
                 AEGISOL delivers next-generation AI solutions for vendors,
                 empowering QA teams with intelligent platforms that
                 auto-generate manual test cases and seamlessly convert them into
@@ -55,15 +62,18 @@ const Hero = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <button
                 className="bg-blue-700 text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition-all duration-200 font-semibold flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 onClick={handleScrollToNext}
               >
                 <span>More</span>
-                <ArrowDown className="h-5 w-5" />
+                <ArrowDown className="w-5 h-5" />
               </button>
-              <button className="bg-white text-blue-800 border-2 border-blue-700 px-8 py-4 rounded-lg hover:bg-blue-800 hover:text-white transition-all duration-200 font-semibold shadow-lg">
+              <button
+                className="px-8 py-4 font-semibold text-blue-800 transition-all duration-200 bg-white border-2 border-blue-700 rounded-lg shadow-lg hover:bg-blue-800 hover:text-white"
+                onClick={handleScrollToContact}
+              >
                 Contact Us
               </button>
             </div>
@@ -71,19 +81,19 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/30">
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-yellow-200">
+                <div className="text-2xl font-bold text-yellow-200 lg:text-3xl">
                   95%
                 </div>
                 <div className="text-sm text-white/80">Faster Testing</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-teal-200">
+                <div className="text-2xl font-bold text-teal-200 lg:text-3xl">
                   500+
                 </div>
                 <div className="text-sm text-white/80">Happy Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-orange-200">
+                <div className="text-2xl font-bold text-orange-200 lg:text-3xl">
                   99.9%
                 </div>
                 <div className="text-sm text-white/80">Uptime</div>
