@@ -103,7 +103,7 @@ const Hero = () => {
 
           {/* Right Column - Visual */}
           <img
-            src="/images/hero.jpg"
+            src="/images/hero.png"
             alt=""
             className={`rounded-2xl w-full lg:max-w-lg xl:max-w-full lg:ml-auto lg:mr-0 xl:-mr-6 h-auto ${
               animate ? "hero-slide-in-right" : "opacity-0"
